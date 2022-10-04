@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+import sys
+
+test_file = open(sys.argv[1], 'r')
+nums_arr = [int(x[0:-1]) for x in list(test_file)]
+
+first_num = 2
+
+i = 0
+while i < len(nums_arr):
+    num = nums_arr[i] / first_num
+    if num.is_integer():
+        print("{}={}*{}".format(nums_arr[i], int(num), first_num))
+        i += 1
+    else:
+        first_num += 1
