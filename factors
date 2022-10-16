@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+import sys
+
+def factor(num):
+	n = 2
+	while((num % n) != 0):
+		n += 1
+
+	print("{:d}={:d}*{:d}".format(num, int(num / n), n))
+
+
+try:
+	f = open(sys.argv[1], "r")
+
+	for l in f:
+		line = int(l[:-1])
+		factor(line)
+		
+finally:
+	f.close()
